@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <!-- 要換：頁面標題、分享時顯示的描述 -->
-<title>看懂投資風險，做出適合自己的財務選擇｜之之｜你的財商學姊</title>
-<meta name="description" content="從 0050 風險等級、投資前檢查到資金用途，整理投資前該先看懂的觀念。">
+<title>看懂投資風險，做出適合自己的財務選擇｜之之</title>
+<meta name="description" content="從 0050 的風險報酬等級到投資前的自我檢查，陪你看懂商品風險、資金用途與自己的投資選擇。">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;700;900&family=Noto+Sans+TC:wght@300;400;500;700;900&family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* ── 版型：沿用 2026-08-06-chatgpt-setup／2026-10-01-7-habits 的米色＋金橘 ── */
@@ -214,124 +214,277 @@ details.ch[open] .ch-mk::after{transform:rotate(90deg);opacity:0;}
   .skbtn{font-size:16px;padding:15px 26px;white-space:nowrap;}
   .footer{padding:20px 20px 36px;}
 }
+
+/* 手機版防文字裁切：只補充小螢幕覆寫，讓長句與表格在容器內換行 */
+@media (max-width: 600px) {
+  html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
+  .wrap, .sec, .mid-intro, .mid-intro * { min-width: 0; max-width: 100%; }
+  .hero h1, .hero p, .sec h2, .sec p, .pos, .judge, .cp pre {
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+  .mid-intro .slogan {
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+  .mid-intro .proof,
+  .mid-intro .proof * {
+    flex-wrap: wrap;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  .tblwrap { width: 100%; max-width: 100%; overflow-x: hidden; }
+  .tbl { width: 100%; max-width: 100%; table-layout: fixed; }
+  .tbl th, .tbl td {
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    padding: 10px 9px;
+  }
+  .tbl th:first-child, .tbl td:first-child { width: 30%; }
+  .tbl th:nth-child(2), .tbl td:nth-child(2) { width: 70%; }
+  .cp pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+}
+
+
+@media (max-width: 600px) {
+  .cp, .copy-box, .copy-wrap {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+    padding: 14px 14px 18px !important;
+    min-height: 0 !important;
+  }
+  .cp button, .copy-box button, .copy-wrap button {
+    position: static !important;
+    align-self: flex-end !important;
+    order: -1 !important;
+    margin: 0 0 0 auto !important;
+  }
+  .cp pre, .cp code, .copy-box pre, .copy-wrap pre {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    white-space: pre-wrap !important;
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+    box-sizing: border-box !important;
+  }
+}
+
+
+@media (max-width: 600px) { .tagline-last { display: block !important; white-space: normal !important; } }
 </style>
 </head>
 <body>
 <script>document.documentElement.className+=' js';</script>
 <div class="glow"><div class="g1"></div><div class="g2"></div></div>
+
+<!-- ═════ ① 懸浮按鈕：電腦版右側卡片、手機版底部按鈕。滑到最下面「關於我」時自動收起 ═════ -->
 <div class="float-cta" id="float-cta">
-  <a class="fc-pill" href="https://lin.ee/SSriqu5" target="_blank" rel="noopener">預約免費諮詢了解✨本人親自回覆 <span class="ar">→</span></a>
-  <div class="fc-card"><div class="k">NEXT STEP</div>
-    <h4>看懂商品風險<br><span class="g">再做自己的選擇</span></h4>
-    <p>這頁先幫你看懂風險觀念，想整理自己的財務狀況，可以再一起討論。</p>
-    <a href="https://lin.ee/SSriqu5" target="_blank" rel="noopener">預約免費諮詢了解✨本人親自回覆</a>
+  <a class="fc-pill" href="https://lin.ee/SSriqu5" target="_blank" rel="noopener">我想了解自己的投資風險 <span class="ar">→</span></a>
+  <div class="fc-card">
+    <div class="k">NEXT STEP</div>
+    <h4>你在這頁先看懂投資風險<br><span class="g">完整的財務規劃可以找我一起整理</span></h4>
+    <p>這裡先陪你看懂投資風險，完整的財務規劃可以再找我一起整理。</p>
+    <a href="https://lin.ee/SSriqu5" target="_blank" rel="noopener">預約財務狀況初步諮詢</a>
   </div>
 </div>
+
 <div class="wrap">
+
+  <!-- ═════ 開頭：這頁是什麼 ═════ -->
   <header class="hero">
-    <div class="kicker">INVESTMENT RISK · 投資前先看懂</div>
-    <h1>人人都在買的 0050，<br><span class="g">你真的知道它的風險有多高嗎？</span></h1>
-    <div class="h-sub">別人適合的投資，不一定適合你。</div>
-    <p class="hero-sub">別人說長期投資就會賺，網路說 ETF 很適合小資族，朋友說每個月定期定額就對了。但你買進之前，真的知道自己承擔了什麼風險嗎？這頁陪你看懂風險等級、投資前的檢查，以及自己的資金用途。</p>
+    <!-- 要換：kicker／標題／副標／說明／這頁有什麼 -->
+    <div class="kicker">INVESTMENT RISK · 先看懂再做選擇</div>
+    <h1>人人都在買 0050，<br><span class="g">你真的知道它的風險有多高嗎？</span></h1>
+    <div class="h-sub">先搞懂自己買的是什麼、風險在哪裡，以及這筆錢到底要拿來做什麼。</div>
+    <p class="hero-sub">別人說長期投資就會賺，網路說 ETF 適合小資族，朋友說每個月定期定額就對了。但你買進之前，真的知道自己承擔了什麼風險嗎？這一頁陪你看懂風險等級、檢查資金用途，做出更清楚的財務選擇。</p>
+    <!-- 自介卡：放在說明之後、「這頁有」之前 -->
     <div class="mid-intro">
-      <div class="who"><div><div class="nm">之之｜你的財商學姊</div><div class="tt2">財商教育｜生活優化</div></div></div>
-      <div class="slogan">陪你看懂錢、看懂選擇，讓每一分努力，都更有價值。</div>
-      <div class="proof"><div class="txt"><b>我是之之，你的財商學姊。</b><br class="m-br">陪你用白話看懂投資、風險與財務規劃，讓你不只是跟著市場走，而是更清楚自己為什麼做這個選擇。</div></div>
+      <div class="who">
+        <img src="data:image/jpeg;base64,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" alt="之之">
+        <div><div class="nm">之之</div><div class="tt2">財商教育｜生活優化</div></div>
+      </div>
+      <div class="slogan">陪你看懂錢、看懂選擇，讓每一分努力，<span class="tagline-last">都更有價值。</span></div>
+      <div class="proof">
+        <div class="num"><div class="d">協助學員學習財商與財務規劃</div><div class="v">500+ 學員</div></div>
+        <div class="txt"><b>我目前專注於財商教育、資產優化與個人品牌經營，透過內容分享與資源整合，幫助更多人看懂錢、看懂選擇。</b><br class="m-br">從看懂自己的財務狀況開始，一步一步整理出適合自己的選擇。</div>
+      </div>
     </div>
-    <nav class="toc"><div class="tt">這頁有</div><ul>
-      <li><a href="#s-hooks">先搞懂投資風險<i>↓</i></a></li>
-      <li><a href="#s-prompt">學會查風險等級<i>↓</i></a></li>
-      <li><a href="#s-check">檢查自己的投資計畫<i>↓</i></a></li>
-    </ul></nav>
+
+    <nav class="toc">
+      <div class="tt">這頁有</div>
+      <ul>
+        <li><a href="#s-hooks">看懂投資風險<i>↓</i></a></li>
+        <li><a href="#s-prompt">10 秒查風險等級<i>↓</i></a></li>
+        <li><a href="#s-check">投資前自我檢查<i>↓</i></a></li>
+      </ul>
+    </nav>
   </header>
 
+  <!-- ═════ ② 乾貨區：投資風險指南 ═════ -->
 
   <section class="sec fade" id="s-hooks">
-    <span class="sec-tag">先懂觀念</span>
-    <h2>買大家都在買的，<br><span class="g">就代表適合你嗎？</span></h2>
-    <p>當一檔 ETF 漲得很好，很多人就開始討論它。當身邊的人都在買，你也會覺得自己是不是應該跟上。</p>
-    <p>但你知道這檔 ETF 的風險等級嗎？知道它主要投資哪些公司嗎？如果投入 100 萬元，遇到市場下跌後帳面剩下 80 萬元，你能接受嗎？如果這筆錢三年後就要拿來買房，你還能用同樣的方式投資嗎？</p>
-    <p>這些問題，比單純問「這檔會不會漲」更重要。</p>
-    <h3>投資前，先搞懂三件事</h3>
-    <div class="tblwrap"><table class="tbl"><thead><tr><th>先看什麼</th><th>可以問自己的問題</th></tr></thead><tbody>
-      <tr><td>你買的是什麼？</td><td>了解投資標的、持股內容、產業集中程度，以及可能影響價格的因素。</td></tr>
-      <tr><td>你承擔什麼風險？</td><td>除了風險報酬等級，也要了解市場波動、集中風險，以及自己可能承受的損失。</td></tr>
-      <tr><td>你為什麼要買？</td><td>是為了長期累積資產、準備退休、買房，還是希望增加未來現金流？</td></tr>
-    </tbody></table></div>
-    <div class="judge no"><span class="jl">先別急著買</span>不要只因為朋友買、網路很紅，就跟著投入。</div>
-    <div class="judge ok"><span class="jl">先做功課</span>了解商品內容、風險，以及這筆錢能放多久，再決定要不要投資。</div>
-    <div class="pos"><b>記得：</b>別人適合的投資，不一定適合你。真正重要的，是你知不知道自己為什麼買。</div>
+    <span class="sec-tag">先看觀念</span>
+    <h2>買大家都在買的<br><span class="g">就代表適合你嗎？</span></h2>
+    <p>當一檔 ETF 漲得很好，很多人就開始討論它。當身邊的人都在買，你也可能覺得自己是不是應該跟上。</p>
+    <p>但你知道這檔 ETF 的風險等級嗎？知道它主要投資哪些公司嗎？如果投入的 100 萬元遇到市場下跌，帳面暫時剩下 80 萬元，你能接受嗎？如果這筆錢三年後就要拿來買房，你還能用同樣的方式投資嗎？</p>
+    <div class="tblwrap"><table class="tbl">
+      <thead><tr><th>投資前先問</th><th>你要了解的事</th></tr></thead>
+      <tbody>
+        <tr><td>你買的是什麼？</td><td>投資標的、持股內容、產業集中程度，以及可能影響價格的因素。</td></tr>
+        <tr><td>你承擔什麼風險？</td><td>風險報酬等級、市場波動，以及自己可能承受的損失。</td></tr>
+        <tr><td>你為什麼要買？</td><td>長期累積資產、準備退休、買房，或增加未來現金流。</td></tr>
+      </tbody>
+    </table></div>
+    <div class="pos"><b>提醒：</b>不同的目標，需要不同的資金安排。別人適合的投資，不一定適合你。真正重要的，是你知不知道自己為什麼買。</div>
   </section>
 
   <section class="sec fade" id="s-prompt">
-    <span class="sec-tag">免費知識 · 官方資料先查清楚</span>
-    <h2>10 秒學會查風險等級，<br><span class="g">答案記得回到官方核對</span></h2>
-    <p>你不需要很專業，也能開始看懂投資商品。可以先用 AI 整理資訊，再回到基金公司或官方文件核對最新資料。</p>
-    <div class="cp"><div class="pl">PROMPT · 投資風險資料查詢</div><button class="copy-btn" type="button">複製</button><pre id="prompt">請告訴我 0050 的風險報酬等級是什麼？請提供官方資料來源，並解釋這個等級代表什麼。
-
-請區分官方資料與你的解釋，並用一般投資人看得懂的方式說明：
-1. 這個等級通常代表什麼風險特性？
-2. 這項商品主要投資什麼？
-3. 投資前還需要注意哪些風險？
-4. 請附上官方資料連結與資料日期。
-
-請不要把風險等級解讀成保證獲利或固定虧損幅度；不確定的地方請明確說明。</pre></div>
-    <p class="tipline"><b>官方查詢：</b><a href="https://www.yuantaetfs.com/product/detail/0050/Basic_information" target="_blank" rel="noopener">元大投信 0050 基本資料</a>。依提供的資料，0050 的風險報酬等級為 RR4；上線前及實際投資前，仍請以官方最新揭露為準。</p>
-    <h3>RR1～RR5 代表什麼？</h3>
-    <div class="tblwrap"><table class="tbl"><thead><tr><th>等級</th><th>概念說明</th></tr></thead><tbody>
-      <tr><td>RR1</td><td>相對低的波動風險；過去淨值波動相對較低，但不等於完全沒有虧損風險。</td></tr>
-      <tr><td>RR2</td><td>較低的波動風險；仍可能受到市場環境影響，出現價格下跌。</td></tr>
-      <tr><td>RR3</td><td>中間等級；需要考慮市場波動、投資期間與資金需求。</td></tr>
-      <tr><td>RR4</td><td>較高的波動風險；市場變動可能造成較明顯的價格波動與損失。</td></tr>
-      <tr><td>RR5</td><td>分類所反映的波動風險較高，投資前應仔細了解商品特性。</td></tr>
-    </tbody></table></div>
-    <div class="pos"><b>提醒：</b>以上是風險等級的概念性說明，不代表每一級都有固定的實際虧損幅度。風險報酬等級也不是成績單，更不是判斷商品好壞的唯一標準。</div>
-    <div class="acc">
-      <details class="ch" open><summary><span class="ch-n">1</span><span class="ch-t">RR4 就一定不好嗎？</span><span class="ch-mk"></span></summary><div class="ch-body"><p>當然不是。重點不是看到 RR4 就不買，而是要知道這樣的風險是否符合你的投資目標與承受能力。</p></div></details>
-      <details class="ch"><summary><span class="ch-n">2</span><span class="ch-t">0050 還有哪些風險要留意？</span><span class="ch-mk"></span></summary><div class="ch-body"><p>0050 追蹤臺灣50指數，投資台灣大型上市公司。它仍有市場風險，也可能受到權值股集中、產業景氣及市場情緒等因素影響。</p></div></details>
+    <span class="sec-tag">免費知識</span>
+    <h2>10 秒學會查風險等級<br><span class="g">先用 AI 整理，再回官方核對</span></h2>
+    <p>你不需要很專業，也能開始看懂投資商品。可以先把下面這段提示詞複製給 AI，請它整理風險報酬等級和官方資料來源。</p>
+    <div class="cp">
+      <button class="copy-btn" type="button">複製</button>
+      <pre>請告訴我 0050 的風險報酬等級是什麼？請提供官方資料來源，並解釋這個等級代表什麼。</pre>
     </div>
+    <p>以元大投信官方資料為例，0050 的風險報酬等級為 RR4。最新資訊請以官方頁面為準：</p>
+    <p><a href="https://www.yuantaetfs.com/product/detail/0050/Basic_information" target="_blank" rel="noopener">官方查詢：元大投信 0050 基本資料 ↗</a></p>
+    <div class="tblwrap"><table class="tbl">
+      <thead><tr><th>等級</th><th>概念說明</th></tr></thead>
+      <tbody>
+        <tr><td>RR1</td><td>分類所反映的波動風險相對較低，但不等於沒有虧損風險。</td></tr>
+        <tr><td>RR2</td><td>波動風險相對較低，仍可能受到市場環境影響而下跌。</td></tr>
+        <tr><td>RR3</td><td>需要考慮市場波動、投資期間與資金需求。</td></tr>
+        <tr><td>RR4</td><td>分類所反映的波動風險較高，可能出現較明顯的價格波動與損失。</td></tr>
+        <tr><td>RR5</td><td>分類所反映的波動風險較高，投資前應仔細了解商品特性。</td></tr>
+      </tbody>
+    </table></div>
+    <div class="pos"><b>注意：</b>以上是風險等級的概念性說明，不代表每一級都有固定的實際虧損幅度。AI 是查資料的起點，不是最後的答案；請回到基金公司或官方文件核對最新資料。</div>
+    <h3>RR4 就一定不好嗎？</h3>
+    <p>當然不是。風險等級不是成績單，也不是判斷商品好壞的唯一標準。</p>
+    <p>0050 追蹤臺灣50指數，投資台灣大型上市公司。它仍然有市場風險，也可能受到權值股集中、產業景氣及市場情緒等因素影響。</p>
+    <div class="judge no"><span class="jl">容易忽略</span>只看過去賺多少，沒有先看自己能承受多少虧損。</div>
+    <div class="judge ok"><span class="jl">更完整的做法</span>了解商品特性，再確認風險是否符合自己的投資目標與承受能力。</div>
   </section>
 
   <section class="sec fade" id="s-check">
-    <span class="sec-tag">實用乾貨 · 投資前自我檢查</span>
-    <h2>先測試自己能承受多少風險，<br><span class="g">再決定怎麼安排資金</span></h2>
+    <span class="sec-tag">實用乾貨</span>
+    <h2>投資前，先測試自己<br><span class="g">能承受多少風險</span></h2>
     <p>假設你投入 100 萬元，遇到市場下跌，帳面剩下 80 萬元。你會繼續持有、重新檢視投資計畫，還是急著賣出？</p>
-    <p>這不是正式的投資人風險屬性測驗，也不能單獨決定你適合哪一種投資；它只是幫你整理投資前需要思考的問題。</p>
+    <p>你的答案不能單獨決定你適合哪一種投資，但可以幫助你開始思考自己的風險承受能力。</p>
     <div class="acc">
-      <details class="ch" open><summary><span class="ch-n">1</span><span class="ch-t">如果投資帳面下跌，你能接受多少？</span><span class="ch-mk"></span></summary><div class="ch-body"><div class="cklist"><label class="ck"><input type="checkbox"><span>約 5%，就會很不安</span></label><label class="ck"><input type="checkbox"><span>約 10%，會開始擔心</span></label><label class="ck"><input type="checkbox"><span>約 20%，仍能重新評估並按計畫處理</span></label><label class="ck"><input type="checkbox"><span>不確定，沒有想過</span></label></div></div></details>
-      <details class="ch"><summary><span class="ch-n">2</span><span class="ch-t">這筆投資預計多久後才會用到？</span><span class="ch-mk"></span></summary><div class="ch-body"><div class="cklist"><label class="ck"><input type="checkbox"><span>1 年內</span></label><label class="ck"><input type="checkbox"><span>1～3 年</span></label><label class="ck"><input type="checkbox"><span>3～5 年</span></label><label class="ck"><input type="checkbox"><span>5 年以上</span></label></div></div></details>
-      <details class="ch"><summary><span class="ch-n">3</span><span class="ch-t">你有準備緊急預備金嗎？</span><span class="ch-mk"></span></summary><div class="ch-body"><div class="cklist"><label class="ck"><input type="checkbox"><span>有</span></label><label class="ck"><input type="checkbox"><span>還沒有</span></label><label class="ck"><input type="checkbox"><span>不確定是否足夠</span></label></div></div></details>
-      <details class="ch"><summary><span class="ch-n">4</span><span class="ch-t">你目前主要的投資方式是？</span><span class="ch-mk"></span></summary><div class="ch-body"><div class="cklist"><label class="ck"><input type="checkbox"><span>定期定額 ETF</span></label><label class="ck"><input type="checkbox"><span>基金</span></label><label class="ck"><input type="checkbox"><span>個股</span></label><label class="ck"><input type="checkbox"><span>多種商品都有</span></label><label class="ck"><input type="checkbox"><span>還沒開始投資</span></label></div></div></details>
+      <details class="ch" open><summary><span class="ch-n">01</span><span class="ch-t">這筆錢多久後會用到？</span><span class="ch-mk"></span></summary>
+        <div class="ch-body"><p>短期內需要使用的資金，不適合只因為期待高報酬，就承擔自己無法接受的市場波動。</p></div>
+      </details>
+      <details class="ch"><summary><span class="ch-n">02</span><span class="ch-t">你有緊急預備金嗎？</span><span class="ch-mk"></span></summary>
+        <div class="ch-body"><p>如果生活突然需要一筆錢，你是否必須賣掉股票才能支付？</p></div>
+      </details>
+      <details class="ch"><summary><span class="ch-n">03</span><span class="ch-t">你的投資是否太集中？</span><span class="ch-mk"></span></summary>
+        <div class="ch-body"><p>即使持有 ETF，也要了解持股分布、產業集中程度，以及不同資產之間的關聯。</p></div>
+      </details>
+      <details class="ch"><summary><span class="ch-n">04</span><span class="ch-t">你有自己的投資計畫嗎？</span><span class="ch-mk"></span></summary>
+        <div class="ch-body"><p>你知道自己為什麼買、預計持有多久，以及哪些情況下需要重新檢視投資策略嗎？</p></div>
+      </details>
     </div>
-    <div class="pos"><b>初步提醒：</b>如果這筆錢短期內會用到、緊急預備金還沒準備好，或你不確定自己能承受多少波動，先整理資金用途與整體財務狀況，再考慮投入多少。</div>
-    <h3>投資前的 4 個檢查</h3>
-    <div class="cklist"><label class="ck"><input type="checkbox"><span>確認這筆錢多久後會用到</span></label><label class="ck"><input type="checkbox"><span>確認緊急預備金是否足夠</span></label><label class="ck"><input type="checkbox"><span>檢查持股分布、產業集中程度與資產關聯</span></label><label class="ck"><input type="checkbox"><span>想好市場波動時，如何檢視原本的投資計畫</span></label></div>
-    <div class="tipline">勾選只用來幫你整理想法，不會產生正式風險評估結果。</div>
+    <h3>投資風險觀念小測驗</h3>
+    <p>這不是正式的投資人風險屬性測驗，而是幫你整理投資前需要思考的問題。你可以在心裡選出最符合自己的答案，再帶著答案進一步整理財務狀況。</p>
+    <div class="qa">
+      <div class="q">1. 如果投資帳面下跌，你能接受多少？</div>
+      <div class="a">
+        <label class="ck"><input type="radio" name="loss" value="5"><span>約 5%，就會很不安</span></label>
+        <label class="ck"><input type="radio" name="loss" value="10"><span>約 10%，會開始擔心</span></label>
+        <label class="ck"><input type="radio" name="loss" value="20"><span>約 20%，仍能重新評估並按計畫處理</span></label>
+        <label class="ck"><input type="radio" name="loss" value="unknown"><span>不確定，沒有想過</span></label>
+      </div>
+      <div class="q">2. 這筆投資預計多久後才會用到？</div>
+      <div class="a">
+        <label class="ck"><input type="radio" name="horizon" value="1年內"><span>1 年內</span></label>
+        <label class="ck"><input type="radio" name="horizon" value="1-3年"><span>1～3 年</span></label>
+        <label class="ck"><input type="radio" name="horizon" value="3-5年"><span>3～5 年</span></label>
+        <label class="ck"><input type="radio" name="horizon" value="5年以上"><span>5 年以上</span></label>
+      </div>
+      <div class="q">3. 你有準備緊急預備金嗎？</div>
+      <div class="a">
+        <label class="ck"><input type="radio" name="reserve" value="有"><span>有</span></label>
+        <label class="ck"><input type="radio" name="reserve" value="還沒有"><span>還沒有</span></label>
+        <label class="ck"><input type="radio" name="reserve" value="不確定"><span>不確定是否足夠</span></label>
+      </div>
+      <div class="q">4. 你目前主要的投資方式是？</div>
+      <div class="a">
+        <label class="ck"><input type="radio" name="method" value="ETF"><span>定期定額 ETF</span></label>
+        <label class="ck"><input type="radio" name="method" value="基金"><span>基金</span></label>
+        <label class="ck"><input type="radio" name="method" value="個股"><span>個股</span></label>
+        <label class="ck"><input type="radio" name="method" value="多種商品"><span>多種商品都有</span></label>
+        <label class="ck"><input type="radio" name="method" value="尚未投資"><span>還沒開始投資</span></label>
+      </div>
+    </div>
+    <div class="pos"><b>初步提醒：</b>這份小測驗讓你整理自己對波動、資金使用時間、緊急預備金與投資方式的想法，不會自動判定你適合哪一種投資，也不是正式風險屬性評估。</div>
+    <p>整理完答案後，你可以帶著自己的問題進一步諮詢。</p>
+    <p><a href="https://lin.ee/SSriqu5" target="_blank" rel="noopener">預約財務狀況初步諮詢 ↗</a></p>
   </section>
 
-  <section class="sec fade">
-    <span class="sec-tag">諮詢入口</span><h2>你買的商品，真的適合你嗎？</h2>
-    <p>不要只看別人賺多少，也要看自己承擔多少。如果你已經開始投資 ETF、基金或股票，卻還是不確定目前持有的商品風險高不高、配置是否太集中、投資金額和每月收入是否相符，或這筆錢該長期投資還是保留作為未來生活資金，可以先從自己的財務狀況開始。</p>
+  <section class="sec fade" id="s-next">
+    <span class="sec-tag">下一步</span>
+    <h2>你買的商品<br><span class="g">真的適合你嗎？</span></h2>
+    <p>不要只看別人賺多少，也要看自己承擔多少。如果你已經開始投資 ETF、基金或股票，卻還是不確定目前持有的商品風險高不高、投資配置是否太集中，或投資金額和每月收入是否相符，可以先從自己的財務狀況開始。</p>
     <p>我會陪你整理收入、支出、資產、負債、投資目標與風險承受能力，再一起釐清有哪些需要進一步了解的問題。</p>
-    <p><b>不是要你跟著我買哪一檔，而是希望你在每一次投資之前，都能更清楚自己在做什麼選擇。</b></p>
-    <p>也可以先私訊我「風險」，告訴我你目前最想了解的投資問題。</p>
-    <div class="btn-wrap"><a class="skbtn" href="https://lin.ee/SSriqu5" target="_blank" rel="noopener">預約免費諮詢了解✨本人親自回覆 →</a><div class="btn-note">先從自己的財務狀況開始，一步一步整理。</div></div>
+    <p><b>不是要你跟著我買哪一檔。</b>而是希望你在每一次投資之前，都能更清楚自己在做什麼選擇。</p>
+    <div class="pos"><b>也可以先私訊我「風險」</b>，告訴我你目前最想了解的投資問題。</div>
+    <p class="tipline">本頁內容僅供一般財務教育與資訊參考，不構成個別投資建議。投資有風險，過去績效與風險報酬等級不代表未來報酬。投資前請詳閱相關公開說明書，並評估自身財務狀況與風險承受能力。</p>
   </section>
-  <section class="sec"><div class="pos"><b>投資風險提醒：</b>本頁內容僅供一般財務教育與資訊參考，不構成個別投資建議。投資有風險，過去績效與風險報酬等級不代表未來報酬。投資前請詳閱相關公開說明書，並評估自身財務狀況與風險承受能力。</div></section>
 
+  <!-- ═════ ③ 關於我：每一頁都一樣，不跟著乾貨改 ═════ -->
   <section class="inst" id="institute">
     <div class="kk">ABOUT · 寧好生活</div>
-    <h2>我是之之，<br><span class="g">陪你把財務選擇看清楚</span></h2>
-    <p class="lead">我分享財商教育、資產優化與生活中的財務觀念，陪你先理解自己的狀況，再做出適合自己的選擇。</p>
-    <div class="founder"><p>我也曾經遇過財務上的挫折，才更明白，很多選擇不能只看眼前的結果，還要看懂風險和自己真正需要什麼。</p><p>現在我把學到的財務觀念整理成一般人也能理解的方式，希望讓你在做決定前，多一點判斷的依據。</p></div>
+    <h2>我是之之，你的財商學姊<br><span class="g">陪你看懂財務，找到選擇</span></h2>
+
+    <p class="lead">從資產、負債與現金流開始，幫助想調整財務、累積資產的人，找到適合自己的規劃方向。</p>
+    <div class="founder">
+      <p>以前的我，只知道努力賺錢，也嘗試過很多投資，卻沒有真正了解風險。直到被詐騙 130 萬、賠光積蓄、刷爆信用卡，甚至每個月只能繳最低應繳，我才發現，努力賺錢不代表懂得管理錢。</p>
+      <p>後來接觸財商，我開始看懂自己的收入、支出、負債與資產，也學會重新安排每一筆錢的使用順序。透過一年的調整，結合財商觀念與銀行資源，我成功走出財務旋渦。現在的我，在意的不只是賺多少，而是每一個財務選擇，有沒有讓自己更接近目標。</p>
+    </div>
+
     <h3>我能幫你什麼</h3>
-    <div class="tools"><div class="tool main"><div class="tn">財務狀況初步整理<em>主打</em></div><div class="td">一起釐清收入、支出、資產負債與目前的財務目標。</div></div><div class="tool"><div class="tn">資產優化</div><div class="td">從資金用途與整體配置的角度，整理需要留意的地方。</div></div><div class="tool"><div class="tn">財商教育</div><div class="td">把投資、風險與財務觀念，用生活化的方式說清楚。</div></div></div>
-    <h3>你可能卡在這幾件事</h3><div class="qa"><div class="q">我沒有很多錢，也能開始整理嗎？</div><div class="a">可以。先從收入、支出、負債和近期用錢需求開始，不需要等到有很多資產才整理。</div><div class="q">你會直接叫我買哪一檔嗎？</div><div class="a">這裡先以財務教育和狀況整理為主，不會只憑一兩個條件就替你決定買哪一檔商品。</div></div>
-    <h3>適合這樣的人</h3><div class="fit"><div class="f">想開始投資，但還不熟悉風險的人</div><div class="f">已經有投資，想檢查資金是否太集中的人</div><div class="f">有買房、生活或其他資金目標，需要整理財務計畫的人</div></div>
-    <div class="btn-wrap"><a class="skbtn" href="https://lin.ee/SSriqu5" target="_blank" rel="noopener">預約免費諮詢了解✨本人親自回覆 →</a><div class="btn-note">從自己的財務狀況開始，一步一步整理。</div></div>
+    <div class="tools">
+      <div class="tool main"><div class="tn">財務健檢與資產優化<em>主打</em></div><div class="td">從收入、支出、資產與負債開始，釐清財務狀況與規劃方向。</div></div>
+      <div class="tool"><div class="tn">財商教育與學習</div><div class="td">用白話理解投資、風險與財務觀念，提升判斷力。</div></div>
+      <div class="tool"><div class="tn">個人品牌經營與資源整合</div><div class="td">整理內容與合作資源，協助個人品牌經營。</div></div>
+    </div>
+
+    <h3>你可能卡在這幾件事</h3>
+    <div class="qa">
+      <div class="q">我現在收入不高、負債又多，還有辦法做財務規劃嗎？</div>
+      <div class="a">每個人的收入、資產、負債與信用條件都不同，適合的規劃方式也不一樣。不用先預設自己做不到，改變可以從很小的地方開始。</div>
+      <div class="q">我不懂投資，也沒有財務背景，聽得懂財商課程嗎？</div>
+      <div class="a">每個人的收入、資產、負債與信用條件都不同，適合的規劃方式也不一樣。不用先預設自己做不到，改變可以從很小的地方開始。</div>
+    </div>
+
+    <h3>適合這樣的人</h3>
+    <div class="fit">
+      <div class="f">想減輕房貸、車貸、生活壓力的人</div>
+      <div class="f">領固定薪水，想替自己加薪的人</div>
+      <div class="f">想學習財商、提升判斷力，不想再因資訊落差做錯決定的人</div>
+    </div>
+
+    <div class="btn-wrap">
+      <a class="skbtn" href="https://lin.ee/SSriqu5" target="_blank" rel="noopener">預約財務狀況初步諮詢 →</a>
+      <div class="btn-note">預約初步諮詢，先整理自己的財務狀況。</div>
+    </div>
   </section>
-  <footer class="footer"><div class="fa">之之｜你的財商學姊｜寧好生活</div><div class="fc">財商教育｜生活優化<br>※ 本頁內容僅供一般財務教育，不構成個別投資建議。</div></footer>
+
+  <footer class="footer">
+    <div class="fa">之之 @cn91135</div>
+    <div class="fc">@cn91135<br>※ 文中數字為個人經驗，不代表每個人都能有相同結果</div>
+  </footer>
+
 </div>
+
 <script>
 // 複製：每個灰底框右上角的按鈕，複製同一框裡的文字
 document.querySelectorAll('.copy-btn').forEach(function(btn){
