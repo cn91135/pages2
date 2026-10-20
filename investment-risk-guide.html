@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-TW" data-theme="gold">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<!-- 要換：頁面標題、分享時顯示的描述 -->
+<title>看懂投資風險，做出適合自己的財務選擇｜之之｜你的財商學姊</title>
+<meta name="description" content="從 0050 風險等級、投資前檢查到資金用途，整理投資前該先看懂的觀念。">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;700;900&family=Noto+Sans+TC:wght@300;400;500;700;900&family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ── 版型：沿用 2026-08-06-chatgpt-setup／2026-10-01-7-habits 的米色＋金橘 ── */
+:root{
+  --gold:#D4902A; --gold-bright:#E8A94A; --gold-dim:rgba(var(--a-rgb),0.30);
+  --bg:#F4F1EA; --bg2:#FBF8F2; --card:#FFFFFF; --card2:#FAF6EE;
+  --code:#12161f; --code-tx:#e6eaf2;
+  --text:#2c2a26; --dim:#6d6a62; --faint:#a8a39a; --ink:#2a2620;
+  --line:rgba(0,0,0,0.12);
+  --ok:#4a7c3f; --ok-bg:rgba(74,124,63,0.07); --ok-line:rgba(74,124,63,0.25);
+  --no:#b1431f; --no-bg:rgba(200,70,40,0.06); --no-line:rgba(200,70,40,0.22);
+  --dark:linear-gradient(160deg,#15110b 0%,#241a0e 100%);
+  --r-md:16px; --r-lg:22px; --pill:50px;
+  --bounce:400ms cubic-bezier(0.34,1.56,0.64,1);
+  --a-rgb:212,144,42; --sh-rgb:120,90,30; --bg-rgb:244,241,234; --on-accent:#1a1406;
+  --serif:"Noto Serif TC",serif; --sans:"Noto Sans TC","Inter",sans-serif; --mono:"JetBrains Mono",monospace;
+}
+/* ── 配色：改 <html data-theme="…"> 就會換。gold 米金／green 墨綠／navy 海軍藍／rose 乾燥玫瑰 ── */
+html[data-theme="green"]{--gold:#3F7D5C;--gold-bright:#5B9A77;--a-rgb:63,125,92;--bg:#EEF2EC;--bg2:#F7F9F5;--card2:#F3F6F1;--bg-rgb:238,242,236;--sh-rgb:40,70,50;--ink:#1f2a24;--on-accent:#ffffff;}
+html[data-theme="navy"]{--gold:#2F5D8C;--gold-bright:#4A7AAA;--a-rgb:47,93,140;--bg:#EDF1F5;--bg2:#F7F9FB;--card2:#F2F5F9;--bg-rgb:237,241,245;--sh-rgb:30,50,80;--ink:#1d2632;--on-accent:#ffffff;}
+html[data-theme="rose"]{--gold:#B5656B;--gold-bright:#C98389;--a-rgb:181,101,107;--bg:#F6EFEE;--bg2:#FBF7F6;--card2:#F8F1F0;--bg-rgb:246,239,238;--sh-rgb:110,60,60;--ink:#2e2324;--on-accent:#ffffff;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);color:var(--text);line-height:1.85;overflow-x:hidden;background:var(--bg);
+  background-image:radial-gradient(118% 54% at 50% 0%, rgba(var(--a-rgb),0.16) 0%, rgba(var(--a-rgb),0.05) 34%, rgba(var(--bg-rgb),0) 62%);
+  background-attachment:fixed;}
+.glow{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+.g1{position:absolute;width:min(60vw,680px);height:min(60vw,680px);border-radius:50%;background:radial-gradient(circle, rgba(var(--a-rgb),0.13), rgba(var(--a-rgb),0));top:-18%;right:-14%;filter:blur(20px);}
+.g2{position:absolute;width:min(50vw,560px);height:min(50vw,560px);border-radius:50%;background:radial-gradient(circle, rgba(var(--a-rgb),0.12), rgba(var(--a-rgb),0));bottom:-14%;left:-12%;filter:blur(22px);}
+.wrap{max-width:720px;margin:0 auto;position:relative;}
+.js .fade{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease;}
+.fade.vis{opacity:1;transform:translateY(0);}
+a{color:var(--gold);text-decoration:none;}
+.g{color:var(--gold);}
+
+/* ═════ ① 懸浮按鈕：電腦版掛右側、手機版浮在底部；滑到研究所介紹時自動收起 ═════ */
+.float-cta{position:fixed;z-index:40;transition:opacity .3s ease,transform .3s ease;}
+.float-cta.hide{opacity:0;pointer-events:none;}
+.fc-card{display:none;}
+.fc-pill{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--gold);color:var(--on-accent);font-weight:900;font-size:15px;padding:14px 26px;border-radius:var(--pill);box-shadow:0 10px 28px rgba(var(--sh-rgb),0.32);white-space:nowrap;}
+.fc-pill .ar{transition:transform .2s;}
+.fc-pill:hover .ar{transform:translateX(3px);}
+/* 手機／平板：底部置中 */
+@media(max-width:1119px){
+  .float-cta{left:50%;bottom:calc(16px + env(safe-area-inset-bottom));transform:translateX(-50%);}
+  .float-cta.hide{transform:translate(-50%,20px);}
+  body{padding-bottom:84px;}
+}
+/* 電腦：右側卡片 */
+@media(min-width:1120px){
+  .float-cta{top:120px;right:max(24px,calc((100vw - 720px)/2 - 272px));width:240px;}
+  .float-cta.hide{transform:translateX(16px);}
+  .fc-pill{display:none;}
+  .fc-card{display:block;background:linear-gradient(165deg,var(--card) 0%,var(--card2) 100%);border:1px solid var(--gold-dim);border-left:3px solid var(--gold);border-radius:var(--r-md);padding:20px 20px 22px;box-shadow:0 10px 34px rgba(var(--sh-rgb),0.13);}
+  .fc-card .k{font-family:var(--mono);font-size:10px;letter-spacing:0.16em;color:var(--gold);margin-bottom:10px;font-weight:500;}
+  .fc-card h4{font-family:var(--serif);font-weight:900;font-size:17px;line-height:1.5;color:var(--ink);margin-bottom:9px;}
+  .fc-card p{font-size:12.5px;color:var(--dim);line-height:1.7;margin-bottom:16px;}
+  .fc-card a{display:block;text-align:center;background:var(--gold);color:var(--on-accent);font-weight:900;font-size:14px;padding:12px 14px;border-radius:var(--pill);box-shadow:0 6px 18px rgba(var(--a-rgb),0.26);transition:transform var(--bounce);}
+  .fc-card a:hover{transform:translateY(-2px);}
+}
+
+/* ═════ 開頭：只交代「這頁是什麼」，自介移到最下面 ═════ */
+.hero{position:relative;z-index:1;padding:60px 30px 36px;}
+.kicker{font-family:var(--mono);font-size:11px;letter-spacing:0.2em;color:var(--gold);margin-bottom:20px;font-weight:500;}
+.hero h1{font-family:var(--serif);font-weight:900;font-size:36px;line-height:1.36;margin-bottom:14px;color:var(--ink);}
+.hero .h-sub{font-family:var(--serif);font-weight:700;font-size:15px;color:var(--gold);margin-bottom:14px;}
+.hero-sub{font-size:15px;color:var(--dim);line-height:1.85;margin-bottom:24px;}
+/* 這頁有什麼：數字跟單位寫在一起，點了直接跳到那一段 */
+.toc{margin-bottom:24px;}
+.toc .tt{font-size:12px;font-weight:700;color:var(--dim);letter-spacing:0.05em;margin-bottom:8px;}
+.toc ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px;}
+.toc a{display:inline-flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--gold-dim);border-radius:var(--pill);padding:7px 15px;font-size:14px;font-weight:700;color:var(--ink);transition:border-color .2s;}
+.toc a:hover{border-color:var(--gold);}
+.toc a b{font-family:"Inter";font-weight:800;color:var(--gold);}
+.toc a i{font-style:normal;color:var(--gold);font-size:12px;}
+/* 自介卡：全站固定。上面一句是對讀者的承諾，下面是證明 */
+.mid-intro{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:var(--r-md);padding:16px 20px;margin-bottom:24px;}
+.mid-intro .slogan{font-family:var(--serif);font-weight:900;font-size:min(18px,4vw);white-space:nowrap;line-height:1.45;color:var(--ink);margin-top:12px;}
+
+.mid-intro .who{display:flex;align-items:center;gap:14px;}
+.mid-intro .who img{width:76px;height:76px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);}
+.mid-intro .nm{font-weight:900;font-size:16px;line-height:1.3;color:var(--ink);}
+.mid-intro .tt2{font-size:12px;color:var(--dim);line-height:1.4;}
+.mid-intro .proof{display:flex;align-items:flex-end;gap:14px;border-top:1px dashed var(--line);margin-top:12px;padding-top:11px;}
+.mid-intro .num{flex-shrink:0;line-height:1.2;}
+.mid-intro .num .d{font-size:11px;color:var(--dim);}
+.mid-intro .num .v{font-family:"Inter";font-weight:800;font-size:18px;color:var(--gold);white-space:nowrap;}
+.mid-intro .txt{font-size:14.5px;line-height:1.6;color:var(--text);padding-left:14px;border-left:1px solid var(--line);}
+.mid-intro .txt b{color:var(--ink);}
+.m-br{display:none;}
+
+/* ═════ ② 乾貨區 ═════ */
+.sec{position:relative;z-index:1;padding:38px 30px;border-top:1px solid var(--line);}
+.sec-tag{display:inline-block;background:rgba(var(--a-rgb),0.14);color:var(--gold);font-size:12px;font-weight:700;padding:5px 15px;border:1px solid var(--gold-dim);border-radius:var(--pill);margin-bottom:16px;letter-spacing:0.05em;}
+.sec h2{font-family:var(--serif);font-weight:900;font-size:24px;line-height:1.42;margin-bottom:14px;color:var(--ink);}
+.sec>p{font-size:15px;color:var(--text);line-height:1.9;margin-bottom:14px;}
+.tipline{font-size:13.5px;color:var(--dim);line-height:1.75;border-left:2px solid var(--gold-dim);padding-left:14px;margin:13px 0 2px;}
+.tipline b{color:var(--gold);}
+
+.tblwrap{overflow-x:auto;margin:12px 0 4px;border:1px solid var(--line);border-radius:var(--r-md);background:var(--card);}
+.tbl{width:100%;border-collapse:collapse;font-size:13.5px;}
+.tbl th{background:rgba(var(--a-rgb),0.12);color:var(--gold);font-weight:700;text-align:left;padding:10px 13px;border-bottom:2px solid var(--gold-dim);white-space:nowrap;}
+.tbl td{padding:10px 13px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.6;}
+.tbl td:first-child{font-family:"Inter";font-weight:800;color:var(--gold);}
+.tbl td:nth-child(2){font-weight:700;color:var(--ink);white-space:nowrap;}
+.tbl tr:last-child td{border-bottom:none;}
+
+.acc{display:flex;flex-direction:column;gap:10px;}
+details.ch{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;}
+details.ch[open]{border-color:var(--gold-dim);box-shadow:0 4px 18px rgba(var(--sh-rgb),0.07);}
+details.ch summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:16px 18px;user-select:none;}
+details.ch summary::-webkit-details-marker{display:none;}
+.ch-n{flex-shrink:0;min-width:34px;height:30px;border-radius:8px;background:rgba(var(--a-rgb),0.14);border:1px solid var(--gold-dim);color:var(--gold);font-family:var(--mono);font-size:12px;display:flex;align-items:center;justify-content:center;}
+.ch-t{flex:1;font-weight:700;font-size:14.5px;line-height:1.4;}
+.ch-t .en{font-weight:400;color:var(--dim);font-size:12.5px;}
+.ch-mk{flex-shrink:0;width:22px;height:22px;position:relative;}
+.ch-mk::before,.ch-mk::after{content:"";position:absolute;background:var(--gold);border-radius:2px;transition:transform .25s ease,opacity .25s;}
+.ch-mk::before{top:10px;left:4px;width:14px;height:2px;}
+.ch-mk::after{top:4px;left:10px;width:2px;height:14px;}
+details.ch[open] .ch-mk::after{transform:rotate(90deg);opacity:0;}
+.ch-body{padding:6px 18px 18px;border-top:1px solid var(--line);}
+.ch-body p{font-size:14px;line-height:1.82;margin:10px 0;}
+.pos{background:rgba(var(--a-rgb),0.08);border:1px solid var(--gold-dim);border-radius:12px;padding:11px 14px;margin:10px 0 2px;font-size:13.6px;line-height:1.72;}
+.pos b{color:var(--gold);}
+.judge{border-radius:12px;padding:11px 14px;margin:7px 0;font-size:13.6px;line-height:1.72;}
+.judge.no{background:var(--no-bg);border:1px solid var(--no-line);color:#7a3320;}
+.judge.ok{background:var(--ok-bg);border:1px solid var(--ok-line);color:#2f5228;}
+.judge .jl{font-weight:700;font-size:11.5px;letter-spacing:0.05em;display:block;margin-bottom:2px;}
+.judge.no .jl{color:var(--no);}
+.judge.ok .jl{color:var(--ok);}
+
+.cp{background:var(--code);border:2px solid var(--gold);border-radius:var(--r-md);padding:16px;margin:12px 0 2px;position:relative;box-shadow:0 10px 34px rgba(var(--sh-rgb),0.16);}
+.cp .pl{font-family:var(--mono);font-size:10.5px;letter-spacing:0.08em;color:var(--gold-bright);margin-bottom:11px;max-width:calc(100% - 96px);}
+.cp pre{font-family:var(--mono);font-size:12px;line-height:1.85;color:var(--code-tx);white-space:pre-wrap;word-break:break-word;}
+.cp .ph{color:var(--gold-bright);}
+.copy-btn{position:absolute;top:11px;right:11px;background:var(--gold);border:1px solid var(--gold);color:var(--on-accent);font-family:var(--sans);font-size:12px;font-weight:700;padding:7px 16px;border-radius:50px;cursor:pointer;}
+
+.ck{display:flex;gap:11px;align-items:flex-start;padding:9px 0;cursor:pointer;border-bottom:1px dashed var(--line);}
+.ck:last-of-type{border-bottom:none;}
+.ck input{appearance:none;-webkit-appearance:none;flex-shrink:0;width:19px;height:19px;margin-top:4px;border:2px solid var(--gold-dim);border-radius:5px;background:var(--bg2);cursor:pointer;position:relative;transition:all .18s;}
+.ck input:checked{background:var(--gold);border-color:var(--gold);}
+.ck input:checked::after{content:"";position:absolute;left:5px;top:1px;width:5px;height:10px;border:solid var(--on-accent);border-width:0 2.5px 2.5px 0;transform:rotate(45deg);}
+.ck span{font-size:14.5px;line-height:1.7;}
+.ck input:checked + span{color:var(--faint);text-decoration:line-through;}
+.cklist{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:var(--r-md);padding:8px 18px;}
+
+/* ═════ ③ 研究所介紹：跟上面同一套米色＋白卡，不另外換成深色 ═════ */
+.inst{position:relative;z-index:1;padding:44px 30px 40px;border-top:1px solid var(--line);}
+.inst .kk{display:inline-block;background:rgba(var(--a-rgb),0.14);color:var(--gold);font-size:12px;font-weight:700;padding:5px 15px;border:1px solid var(--gold-dim);border-radius:var(--pill);margin-bottom:16px;letter-spacing:0.05em;}
+.inst h2{font-family:var(--serif);font-weight:900;font-size:24px;line-height:1.42;margin-bottom:16px;color:var(--ink);}
+.inst h2 .g{color:var(--gold);}
+.inst .lead{font-family:var(--serif);font-weight:700;font-size:16.5px;line-height:1.7;color:var(--ink);margin-bottom:16px;padding-left:14px;border-left:3px solid var(--gold);}
+.founder{margin-bottom:24px;}
+.founder p{font-size:14.5px;line-height:1.9;color:var(--text);margin-bottom:10px;}
+.founder p b{color:var(--gold);}
+.big{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 30px;}
+.big .b{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:var(--r-md);padding:16px 10px;text-align:center;}
+.big .bn{font-family:"Inter";font-weight:800;font-size:24px;color:var(--gold);line-height:1.1;}
+.big .bl{font-size:12px;color:var(--dim);margin-top:6px;line-height:1.5;}
+.inst h3{font-family:var(--serif);font-weight:900;font-size:18px;margin:6px 0 14px;color:var(--ink);}
+.tools{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:30px;}
+.tool{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:16px;}
+.tool.main{grid-column:1 / -1;border-color:var(--gold-dim);border-left:3px solid var(--gold);background:linear-gradient(165deg,var(--card) 0%,var(--card2) 100%);}
+.tool .tn{font-weight:900;font-size:15px;color:var(--ink);margin-bottom:4px;}
+.tool .tn em{font-style:normal;font-size:11px;font-weight:700;color:var(--on-accent);background:var(--gold);border-radius:50px;padding:1px 8px;margin-left:6px;vertical-align:2px;}
+.tool .tn em.soon{background:rgba(0,0,0,0.08);color:var(--dim);}
+.tool .td{font-size:13px;color:var(--dim);line-height:1.7;}
+.qa{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:4px 18px 16px;margin-bottom:30px;}
+.qa .q{font-family:var(--serif);font-weight:700;font-size:15px;color:var(--ink);margin:14px 0 4px;}
+.qa .q::before{content:"Q";color:var(--gold);font-family:"Inter";font-weight:800;margin-right:8px;}
+.qa .a{font-size:13.8px;color:var(--dim);line-height:1.8;}
+.fit .f{display:flex;gap:10px;font-size:14px;line-height:1.7;margin-bottom:9px;color:var(--text);}
+.fit .f::before{content:"\2714";color:var(--gold);font-weight:700;flex-shrink:0;}
+.btn-wrap{text-align:center;margin-top:30px;background:linear-gradient(165deg,var(--card) 0%,var(--card2) 100%);border:1px solid var(--gold-dim);border-radius:var(--r-lg);padding:26px 18px;}
+.skbtn{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--on-accent);border-radius:var(--pill);padding:17px 46px;font-weight:900;font-size:18px;box-shadow:0 8px 28px rgba(var(--a-rgb),0.30);transition:transform var(--bounce);position:relative;overflow:hidden;}
+.skbtn:hover{transform:translateY(-3px);}
+.skbtn::after{content:'';position:absolute;top:0;left:-100%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.45),transparent);transform:skewX(-25deg);animation:shine 3.4s ease-in-out infinite;}
+@keyframes shine{0%{left:-100%;}22%{left:160%;}100%{left:160%;}}
+.btn-note{margin-top:14px;font-size:12.5px;color:var(--dim);}
+
+.footer{position:relative;z-index:1;border-top:1px solid var(--line);padding:22px 30px 40px;text-align:center;}
+.footer .fa{font-style:italic;font-size:14px;color:var(--gold);font-weight:700;}
+.footer .fc{font-size:11px;color:var(--faint);margin-top:8px;line-height:1.7;}
+
+/* ── 手機版 ── */
+@media(max-width:600px){
+  .hero{padding:40px 20px 28px;}
+  .hero h1{font-size:28px;}
+  .sec{padding:32px 20px;}
+  .sec h2{font-size:21px;}
+  .mid-intro .proof{flex-direction:column;align-items:flex-start;gap:6px;}
+  .mid-intro .num{display:flex;align-items:baseline;gap:8px;}
+  .mid-intro .num .d{font-size:13px;}
+  .mid-intro .txt{padding-left:0;border-left:none;}
+  .m-br{display:inline;}
+  .tbl{font-size:13px;}
+  .tbl th,.tbl td{padding:10px 10px;}
+  details.ch summary{padding:15px 16px;align-items:flex-start;}
+  .ch-t .en{display:block;margin-top:3px;}
+  .ch-mk{margin-top:4px;}
+  .inst{padding:34px 20px 32px;}
+  .inst h2{font-size:21px;}
+  .founder p{font-size:min(14.5px,calc((100vw - 40px) / 26.5));}
+  .big .bn{font-size:20px;}
+  .tools{grid-template-columns:1fr;}
+  .skbtn{font-size:16px;padding:15px 26px;white-space:nowrap;}
+  .footer{padding:20px 20px 36px;}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.className+=' js';</script>
+<div class="glow"><div class="g1"></div><div class="g2"></div></div>
+<div class="float-cta" id="float-cta">
+  <a class="fc-pill" href="https://lin.ee/SSriqu5" target="_blank" rel="noopener">預約免費諮詢了解✨本人親自回覆 <span class="ar">→</span></a>
+  <div class="fc-card"><div class="k">NEXT STEP</div>
+    <h4>看懂商品風險<br><span class="g">再做自己的選擇</span></h4>
+    <p>這頁先幫你看懂風險觀念，想整理自己的財務狀況，可以再一起討論。</p>
+    <a href="https://lin.ee/SSriqu5" target="_blank" rel="noopener">預約免費諮詢了解✨本人親自回覆</a>
+  </div>
+</div>
+<div class="wrap">
+  <header class="hero">
+    <div class="kicker">INVESTMENT RISK · 投資前先看懂</div>
+    <h1>人人都在買的 0050，<br><span class="g">你真的知道它的風險有多高嗎？</span></h1>
+    <div class="h-sub">別人適合的投資，不一定適合你。</div>
+    <p class="hero-sub">別人說長期投資就會賺，網路說 ETF 很適合小資族，朋友說每個月定期定額就對了。但你買進之前，真的知道自己承擔了什麼風險嗎？這頁陪你看懂風險等級、投資前的檢查，以及自己的資金用途。</p>
+    <div class="mid-intro">
+      <div class="who"><div><div class="nm">之之｜你的財商學姊</div><div class="tt2">財商教育｜生活優化</div></div></div>
+      <div class="slogan">陪你看懂錢、看懂選擇，讓每一分努力，都更有價值。</div>
+      <div class="proof"><div class="txt"><b>我是之之，你的財商學姊。</b><br class="m-br">陪你用白話看懂投資、風險與財務規劃，讓你不只是跟著市場走，而是更清楚自己為什麼做這個選擇。</div></div>
+    </div>
+    <nav class="toc"><div class="tt">這頁有</div><ul>
+      <li><a href="#s-hooks">先搞懂投資風險<i>↓</i></a></li>
+      <li><a href="#s-prompt">學會查風險等級<i>↓</i></a></li>
+      <li><a href="#s-check">檢查自己的投資計畫<i>↓</i></a></li>
+    </ul></nav>
+  </header>
+
+
+  <section class="sec fade" id="s-hooks">
+    <span class="sec-tag">先懂觀念</span>
+    <h2>買大家都在買的，<br><span class="g">就代表適合你嗎？</span></h2>
+    <p>當一檔 ETF 漲得很好，很多人就開始討論它。當身邊的人都在買，你也會覺得自己是不是應該跟上。</p>
+    <p>但你知道這檔 ETF 的風險等級嗎？知道它主要投資哪些公司嗎？如果投入 100 萬元，遇到市場下跌後帳面剩下 80 萬元，你能接受嗎？如果這筆錢三年後就要拿來買房，你還能用同樣的方式投資嗎？</p>
+    <p>這些問題，比單純問「這檔會不會漲」更重要。</p>
+    <h3>投資前，先搞懂三件事</h3>
+    <div class="tblwrap"><table class="tbl"><thead><tr><th>先看什麼</th><th>可以問自己的問題</th></tr></thead><tbody>
+      <tr><td>你買的是什麼？</td><td>了解投資標的、持股內容、產業集中程度，以及可能影響價格的因素。</td></tr>
+      <tr><td>你承擔什麼風險？</td><td>除了風險報酬等級，也要了解市場波動、集中風險，以及自己可能承受的損失。</td></tr>
+      <tr><td>你為什麼要買？</td><td>是為了長期累積資產、準備退休、買房，還是希望增加未來現金流？</td></tr>
+    </tbody></table></div>
+    <div class="judge no"><span class="jl">先別急著買</span>不要只因為朋友買、網路很紅，就跟著投入。</div>
+    <div class="judge ok"><span class="jl">先做功課</span>了解商品內容、風險，以及這筆錢能放多久，再決定要不要投資。</div>
+    <div class="pos"><b>記得：</b>別人適合的投資，不一定適合你。真正重要的，是你知不知道自己為什麼買。</div>
+  </section>
+
+  <section class="sec fade" id="s-prompt">
+    <span class="sec-tag">免費知識 · 官方資料先查清楚</span>
+    <h2>10 秒學會查風險等級，<br><span class="g">答案記得回到官方核對</span></h2>
+    <p>你不需要很專業，也能開始看懂投資商品。可以先用 AI 整理資訊，再回到基金公司或官方文件核對最新資料。</p>
+    <div class="cp"><div class="pl">PROMPT · 投資風險資料查詢</div><button class="copy-btn" type="button">複製</button><pre id="prompt">請告訴我 0050 的風險報酬等級是什麼？請提供官方資料來源，並解釋這個等級代表什麼。
+
+請區分官方資料與你的解釋，並用一般投資人看得懂的方式說明：
+1. 這個等級通常代表什麼風險特性？
+2. 這項商品主要投資什麼？
+3. 投資前還需要注意哪些風險？
+4. 請附上官方資料連結與資料日期。
+
+請不要把風險等級解讀成保證獲利或固定虧損幅度；不確定的地方請明確說明。</pre></div>
+    <p class="tipline"><b>官方查詢：</b><a href="https://www.yuantaetfs.com/product/detail/0050/Basic_information" target="_blank" rel="noopener">元大投信 0050 基本資料</a>。依提供的資料，0050 的風險報酬等級為 RR4；上線前及實際投資前，仍請以官方最新揭露為準。</p>
+    <h3>RR1～RR5 代表什麼？</h3>
+    <div class="tblwrap"><table class="tbl"><thead><tr><th>等級</th><th>概念說明</th></tr></thead><tbody>
+      <tr><td>RR1</td><td>相對低的波動風險；過去淨值波動相對較低，但不等於完全沒有虧損風險。</td></tr>
+      <tr><td>RR2</td><td>較低的波動風險；仍可能受到市場環境影響，出現價格下跌。</td></tr>
+      <tr><td>RR3</td><td>中間等級；需要考慮市場波動、投資期間與資金需求。</td></tr>
+      <tr><td>RR4</td><td>較高的波動風險；市場變動可能造成較明顯的價格波動與損失。</td></tr>
+      <tr><td>RR5</td><td>分類所反映的波動風險較高，投資前應仔細了解商品特性。</td></tr>
+    </tbody></table></div>
+    <div class="pos"><b>提醒：</b>以上是風險等級的概念性說明，不代表每一級都有固定的實際虧損幅度。風險報酬等級也不是成績單，更不是判斷商品好壞的唯一標準。</div>
+    <div class="acc">
+      <details class="ch" open><summary><span class="ch-n">1</span><span class="ch-t">RR4 就一定不好嗎？</span><span class="ch-mk"></span></summary><div class="ch-body"><p>當然不是。重點不是看到 RR4 就不買，而是要知道這樣的風險是否符合你的投資目標與承受能力。</p></div></details>
+      <details class="ch"><summary><span class="ch-n">2</span><span class="ch-t">0050 還有哪些風險要留意？</span><span class="ch-mk"></span></summary><div class="ch-body"><p>0050 追蹤臺灣50指數，投資台灣大型上市公司。它仍有市場風險，也可能受到權值股集中、產業景氣及市場情緒等因素影響。</p></div></details>
+    </div>
+  </section>
+
+  <section class="sec fade" id="s-check">
+    <span class="sec-tag">實用乾貨 · 投資前自我檢查</span>
+    <h2>先測試自己能承受多少風險，<br><span class="g">再決定怎麼安排資金</span></h2>
+    <p>假設你投入 100 萬元，遇到市場下跌，帳面剩下 80 萬元。你會繼續持有、重新檢視投資計畫，還是急著賣出？</p>
+    <p>這不是正式的投資人風險屬性測驗，也不能單獨決定你適合哪一種投資；它只是幫你整理投資前需要思考的問題。</p>
+    <div class="acc">
+      <details class="ch" open><summary><span class="ch-n">1</span><span class="ch-t">如果投資帳面下跌，你能接受多少？</span><span class="ch-mk"></span></summary><div class="ch-body"><div class="cklist"><label class="ck"><input type="checkbox"><span>約 5%，就會很不安</span></label><label class="ck"><input type="checkbox"><span>約 10%，會開始擔心</span></label><label class="ck"><input type="checkbox"><span>約 20%，仍能重新評估並按計畫處理</span></label><label class="ck"><input type="checkbox"><span>不確定，沒有想過</span></label></div></div></details>
+      <details class="ch"><summary><span class="ch-n">2</span><span class="ch-t">這筆投資預計多久後才會用到？</span><span class="ch-mk"></span></summary><div class="ch-body"><div class="cklist"><label class="ck"><input type="checkbox"><span>1 年內</span></label><label class="ck"><input type="checkbox"><span>1～3 年</span></label><label class="ck"><input type="checkbox"><span>3～5 年</span></label><label class="ck"><input type="checkbox"><span>5 年以上</span></label></div></div></details>
+      <details class="ch"><summary><span class="ch-n">3</span><span class="ch-t">你有準備緊急預備金嗎？</span><span class="ch-mk"></span></summary><div class="ch-body"><div class="cklist"><label class="ck"><input type="checkbox"><span>有</span></label><label class="ck"><input type="checkbox"><span>還沒有</span></label><label class="ck"><input type="checkbox"><span>不確定是否足夠</span></label></div></div></details>
+      <details class="ch"><summary><span class="ch-n">4</span><span class="ch-t">你目前主要的投資方式是？</span><span class="ch-mk"></span></summary><div class="ch-body"><div class="cklist"><label class="ck"><input type="checkbox"><span>定期定額 ETF</span></label><label class="ck"><input type="checkbox"><span>基金</span></label><label class="ck"><input type="checkbox"><span>個股</span></label><label class="ck"><input type="checkbox"><span>多種商品都有</span></label><label class="ck"><input type="checkbox"><span>還沒開始投資</span></label></div></div></details>
+    </div>
+    <div class="pos"><b>初步提醒：</b>如果這筆錢短期內會用到、緊急預備金還沒準備好，或你不確定自己能承受多少波動，先整理資金用途與整體財務狀況，再考慮投入多少。</div>
+    <h3>投資前的 4 個檢查</h3>
+    <div class="cklist"><label class="ck"><input type="checkbox"><span>確認這筆錢多久後會用到</span></label><label class="ck"><input type="checkbox"><span>確認緊急預備金是否足夠</span></label><label class="ck"><input type="checkbox"><span>檢查持股分布、產業集中程度與資產關聯</span></label><label class="ck"><input type="checkbox"><span>想好市場波動時，如何檢視原本的投資計畫</span></label></div>
+    <div class="tipline">勾選只用來幫你整理想法，不會產生正式風險評估結果。</div>
+  </section>
+
+  <section class="sec fade">
+    <span class="sec-tag">諮詢入口</span><h2>你買的商品，真的適合你嗎？</h2>
+    <p>不要只看別人賺多少，也要看自己承擔多少。如果你已經開始投資 ETF、基金或股票，卻還是不確定目前持有的商品風險高不高、配置是否太集中、投資金額和每月收入是否相符，或這筆錢該長期投資還是保留作為未來生活資金，可以先從自己的財務狀況開始。</p>
+    <p>我會陪你整理收入、支出、資產、負債、投資目標與風險承受能力，再一起釐清有哪些需要進一步了解的問題。</p>
+    <p><b>不是要你跟著我買哪一檔，而是希望你在每一次投資之前，都能更清楚自己在做什麼選擇。</b></p>
+    <p>也可以先私訊我「風險」，告訴我你目前最想了解的投資問題。</p>
+    <div class="btn-wrap"><a class="skbtn" href="https://lin.ee/SSriqu5" target="_blank" rel="noopener">預約免費諮詢了解✨本人親自回覆 →</a><div class="btn-note">先從自己的財務狀況開始，一步一步整理。</div></div>
+  </section>
+  <section class="sec"><div class="pos"><b>投資風險提醒：</b>本頁內容僅供一般財務教育與資訊參考，不構成個別投資建議。投資有風險，過去績效與風險報酬等級不代表未來報酬。投資前請詳閱相關公開說明書，並評估自身財務狀況與風險承受能力。</div></section>
+
+  <section class="inst" id="institute">
+    <div class="kk">ABOUT · 寧好生活</div>
+    <h2>我是之之，<br><span class="g">陪你把財務選擇看清楚</span></h2>
+    <p class="lead">我分享財商教育、資產優化與生活中的財務觀念，陪你先理解自己的狀況，再做出適合自己的選擇。</p>
+    <div class="founder"><p>我也曾經遇過財務上的挫折，才更明白，很多選擇不能只看眼前的結果，還要看懂風險和自己真正需要什麼。</p><p>現在我把學到的財務觀念整理成一般人也能理解的方式，希望讓你在做決定前，多一點判斷的依據。</p></div>
+    <h3>我能幫你什麼</h3>
+    <div class="tools"><div class="tool main"><div class="tn">財務狀況初步整理<em>主打</em></div><div class="td">一起釐清收入、支出、資產負債與目前的財務目標。</div></div><div class="tool"><div class="tn">資產優化</div><div class="td">從資金用途與整體配置的角度，整理需要留意的地方。</div></div><div class="tool"><div class="tn">財商教育</div><div class="td">把投資、風險與財務觀念，用生活化的方式說清楚。</div></div></div>
+    <h3>你可能卡在這幾件事</h3><div class="qa"><div class="q">我沒有很多錢，也能開始整理嗎？</div><div class="a">可以。先從收入、支出、負債和近期用錢需求開始，不需要等到有很多資產才整理。</div><div class="q">你會直接叫我買哪一檔嗎？</div><div class="a">這裡先以財務教育和狀況整理為主，不會只憑一兩個條件就替你決定買哪一檔商品。</div></div>
+    <h3>適合這樣的人</h3><div class="fit"><div class="f">想開始投資，但還不熟悉風險的人</div><div class="f">已經有投資，想檢查資金是否太集中的人</div><div class="f">有買房、生活或其他資金目標，需要整理財務計畫的人</div></div>
+    <div class="btn-wrap"><a class="skbtn" href="https://lin.ee/SSriqu5" target="_blank" rel="noopener">預約免費諮詢了解✨本人親自回覆 →</a><div class="btn-note">從自己的財務狀況開始，一步一步整理。</div></div>
+  </section>
+  <footer class="footer"><div class="fa">之之｜你的財商學姊｜寧好生活</div><div class="fc">財商教育｜生活優化<br>※ 本頁內容僅供一般財務教育，不構成個別投資建議。</div></footer>
+</div>
+<script>
+// 複製：每個灰底框右上角的按鈕，複製同一框裡的文字
+document.querySelectorAll('.copy-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var txt = btn.parentElement.querySelector('pre').innerText;
+    function done(){ btn.textContent = '已複製'; setTimeout(function(){ btn.textContent = '複製'; }, 1800); }
+    function fallback(){ var t=document.createElement('textarea'); t.value=txt; document.body.appendChild(t); t.select(); try{document.execCommand('copy');}catch(e){} t.remove(); done(); }
+    if(navigator.clipboard){ navigator.clipboard.writeText(txt).then(done, fallback); } else { fallback(); }
+  });
+});
+
+// 頁內跳轉：不靠網址的 #，直接捲過去（預覽視窗、IG 內建瀏覽器裡 # 有時不會動）
+document.querySelectorAll('a[href^="#"]').forEach(function(link){
+  link.addEventListener('click', function(e){
+    var target = document.getElementById(link.getAttribute('href').slice(1));
+    if(!target) return;
+    e.preventDefault();
+    target.classList.add('vis');
+    target.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+});
+
+// 懸浮按鈕：「關於我」出現在畫面上時收起，避免兩顆按鈕同時出現
+var fc = document.getElementById('float-cta');
+var inst = document.getElementById('institute');
+if(fc && inst && 'IntersectionObserver' in window){
+  new IntersectionObserver(function(es){
+    fc.classList.toggle('hide', es[0].isIntersecting);
+  }, {threshold:0.05}).observe(inst);
+}
+
+// 捲動淡入
+function reveal(){
+  var vh = window.innerHeight;
+  document.querySelectorAll('.fade:not(.vis)').forEach(function(el){
+    if(el.getBoundingClientRect().top < vh*0.94) el.classList.add('vis');
+  });
+}
+window.addEventListener('scroll', reveal, {passive:true});
+window.addEventListener('load', reveal);
+reveal();
+setTimeout(function(){ document.querySelectorAll('.fade').forEach(function(el){ el.classList.add('vis'); }); }, 2500);
+</script>
+
+<!--
+═══════════════════════════════════════════
+學員落地頁模板（奇點研究所 × D11）
+═══════════════════════════════════════════
+· 用兩層大括號包起來的地方都要換成自己的內容，換完不能留下任何一組
+· 配色：第 2 行 <html data-theme="gold"> 改成 gold／green／navy／rose
+· 大頭照：跟這個檔案放在同一個資料夾，檔名 photo.jpg；或直接嵌成 data:image
+· 三個按鈕（懸浮按鈕、懸浮卡、最下面）都指向同一個連結
+· 數字只放真的，沒有就刪掉那一塊
+═══════════════════════════════════════════
+-->
+</body>
+</html>
